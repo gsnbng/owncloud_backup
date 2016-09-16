@@ -1,0 +1,44 @@
+<!-- jinja -->
+
+<table class="table table-striped table-bordered" style="max-width: 600px;">
+    <thead>
+        <tr>
+            <th style="width: 30%;">
+                {{ _("Date") }}
+            </th>
+            <th style="width: 50%;">
+                {{ _("File") }}
+            </th>
+            <th>
+                {{ _("Size") }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in files %}
+        <tr>
+            <td>
+                {{ f[1] }}
+            </td>
+            <td>
+                <a href="{{ f[0] }}" target="_blank">{{ f[0] }}</a>
+            </td>
+            <td>
+                {{ f[2] }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        
+      </button>
+      <a class="navbar-brand" href="#owncloud-backups" onclick="return download_backup();">Generate backup</a>
+    </div>
+ </div>
+</nav>

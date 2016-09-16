@@ -1,0 +1,18 @@
+frappe.pages['owncloud-backups'].on_page_load = function(wrapper) {
+	var page = frappe.ui.make_app_page({
+		parent: wrapper,
+		title: 'Download Owncloud Backups',
+		single_column: true
+	});
+
+	frappe.breadcrumbs.add("Setup");
+
+	$(frappe.render_template("owncloud_backups")).appendTo(page.body.addClass("no-border"));
+        
+}
+
+download_backup = function() {
+	msgprint(__("Your download is being built, this may take a few moments...") );
+	return $c('owncloud_backup.owncloudbackup.get_backup',{},function(r,rt) {});
+	return false;
+}
