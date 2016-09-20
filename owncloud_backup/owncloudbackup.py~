@@ -214,7 +214,7 @@ def is_file_old(db_file_name, older_than=24):
 			return True
 
 def get_backup_path():
-	backup_path = frappe.utils.get_site_path(conf.get("backup_path", "private/backups"))
+	backup_path = frappe.utils.get_site_path(conf.get("backup_path", "owncloud/backups"))
 	return backup_path
 
 #-------------------------------------------------------------------------------
