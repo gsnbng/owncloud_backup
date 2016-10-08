@@ -45,7 +45,7 @@ app_license = "GNU General Public License"
 # Installation
 # ------------
 
-before_install = "owncloud_backup.install.before_install"
+# before_install = "owncloud_backup.install.before_install"
 # after_install = "owncloud_backup.install.after_install"
 
 # Desk Notifications
