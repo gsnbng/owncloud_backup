@@ -15,9 +15,9 @@ def get_context(context):
 		else:
 			return "{0:.1f}K".format(float(size) / 1024)
 
-	path = get_site_path('owncloud', 'backups')
+	path = get_site_path('private', 'backups','owncloud')
 	files = [x for x in os.listdir(path) if os.path.isfile(os.path.join(path, x))]
-	files = [('/backups/' + _file,
+	files = [('/backups/owncloud/' + _file,
 		get_time(os.path.join(path, _file)),
 		get_size(os.path.join(path, _file))) for _file in files]
 	files.sort(key=lambda x: x[1], reverse=True)
